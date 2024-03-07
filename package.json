@@ -4,9 +4,10 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Info: no test specified\"",
     "serve": "pnpm --parallel dev",
-    "env": "node setup-env.cjs"
+    "env": "node setup-env.cjs",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +17,26 @@
     "npm": ">=10.2.4",
     "pnpm": ">=8.14.1"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "typescript": "^5.4.2",
     "vue": "^3.4.19"
   },
+  "commitlint": {
+    "extends": [ "@commitlint/config-conventional" ]
+  },
   "devDependencies": {
+    "@tsconfig/node18": "^18.2.2",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
     "@vitejs/plugin-vue": "^5.0.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.0.11",
     "vite": "^5.1.4"
   }
 }
