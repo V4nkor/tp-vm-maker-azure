@@ -1,0 +1,27 @@
+{
+  "name": "tp-vm-maker-azure",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "pnpm --parallel dev",
+    "env": "node setup-env.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.10.0 <21.0",
+    "npm": ">=10.2.4",
+    "pnpm": ">=8.14.1"
+  },
+  "dependencies": {
+    "typescript": "^5.4.2",
+    "vue": "^3.4.19"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "vite": "^5.1.4"
+  }
+}

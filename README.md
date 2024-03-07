@@ -5,14 +5,14 @@
 **First install git :**
 
 ```bash
-apt-get install git
+apt-get install git -y
 ```
 
 **Then clone the repository using git :**
 
 ```bash
 cd /path-to-project-folder/
-git clone **********
+git clone https://github.com/V4nkor/tp-vm-maker-azure.git
 ```
 
 ## II - Install and configure NPM
@@ -63,7 +63,9 @@ Make sure you are in the same folder as the `.nvmrc` file !
 nvm use
 ```
 
-## Launch the project
+
+
+## III - Launch the project
 
 **Install PNPM using npm :**
 
@@ -78,3 +80,27 @@ pnpm -r install
 ```
 
 This will install the dependencies for both the Frontend and the Backend
+
+**Prepare the .env file :**
+
+* You can either make it manually by using the `.env.template` file and create the `.env` file with your credentials in `./apps/front/`
+
+* Or you can use the implemented CLI script using pnpm : 
+
+```bash
+pnpm run env
+```
+
+You will be prompted the following elements in your terminal : 
+
+* `AZURE_SUBSCRIPTION_ID`
+
+* `AZURE_CLIENT_ID`
+
+* `AZURE_TENANT_ID`
+
+* `AZURE_CLIENT_SECRET`
+
+You can set them up and retrieve them by following this tutorial : [Entra App documentation MS Learn]([Create a Microsoft Entra app and service principal in the portal - Microsoft identity platform | Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#get-application-id-and-authentication-key))
+
+
