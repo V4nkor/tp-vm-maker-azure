@@ -1,0 +1,17 @@
+[
+    {
+        "username": "novms",
+        "password": "noVmsUserPassword",
+        "authorisedVms": []
+    },
+    {
+        "username": "basic",
+        "password": "basicUserPassword",
+        "authorisedVms": [ 1 ]
+    },
+    {
+        "username": "premium",
+        "password": "premiumUserPassword",
+        "authorisedVms": [ 1, 2, 3 ]
+    }
+]
