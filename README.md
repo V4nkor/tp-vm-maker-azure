@@ -25,7 +25,7 @@ git clone https://github.com/V4nkor/tp-vm-maker-azure.git
 sudo apt-get install wget curl -y
 ```
 
-**Then, you'll need to install NVM using curl**
+**Then, you'll need to install NVM using curl :**
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -62,8 +62,6 @@ Make sure you are in the same folder as the `.nvmrc` file !
 ```bash
 nvm use
 ```
-
-
 
 ## III - Launch the project
 
@@ -102,5 +100,3 @@ You will be prompted the following elements in your terminal :
 * `AZURE_CLIENT_SECRET`
 
 You can set them up and retrieve them by following this tutorial : [Entra App documentation MS Learn](https://learn.microsoft.com/en-us/entra/identity-platform/howto-create-service-principal-portal#get-application-id-and-authentication-key)
-
-

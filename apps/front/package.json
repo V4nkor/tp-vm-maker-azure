@@ -1,5 +1,5 @@
 {
-  "name": "tp-vm-maker-azure",
+  "name": "tp-vm-maker-azure-front",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "pinia": "^2.1.7",
     "sass": "^1.71.1",
     "typescript": "^5.4.2",
     "vue": "^3.4.19",
@@ -16,6 +18,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.5.1",
     "vite": "^5.1.4"
   }
 }
