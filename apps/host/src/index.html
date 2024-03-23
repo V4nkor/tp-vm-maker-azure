@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Host</title>
+</head>
+<body>
+    <h1>Welcome to the VM Maker Host</h1>
+    <p>Head over to the <a href="front">Frontend</a> to start using the app or to the <a class="disabled" href="back" onclick="event.preventDefault()">Backend</a> to learn more about it.</p>
+    <p>This page serves as the Host for the frontend and the backend, it is very experimental so it might not work 100%</p>
+    <p>If you launched this page using <strong>pnpm run dev</strong> you will see this page and it's content but it won't function as a host</p>
+    <p>Head over to <a href="https://github.com/V4nkor/tp-vm-maker-azure">The github repo</a> or read the README.md file in the ./docs folder to learn more</p>
+    <br>
+    <p>To correctly use the host build the apps using <strong>pnpm run build</strong> and then start them using <strong>pnpm run start</strong></p>
+    <br>
+    <p>Created by Mathieu MORGAT 2024 - Sup de Vinci - MSI 4-25 DEV A ISI PARIS</p>
+</body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+    }
+    p {
+        text-align: center;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a.disabled {
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+    a.disabled:hover {
+        text-decoration: none;
+    }
+</style>
+</html>

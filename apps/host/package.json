@@ -1,0 +1,37 @@
+{
+  "name": "tp-vm-maker-azure-host",
+  "version": "1.0.0",
+  "author": "Mathieu Morgat <morgatmathieu@gmail.com>",
+  "description": "Host API for the Azure VM Maker school project",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "audit": "npm_config_yes=true npx pnpm-audit-fix --only=prod",
+    "build": "tsup src/index.ts --format cjs --clean && cp src/index.html dist/index.html",
+    "dev": "nodemon --watch src -e js,ts,json --exec \"ts-node src/index.ts\"",
+    "preinstall": "test \"$(node -v)\" != \"$(cat .nvmrc)\" && { unset npm_package_scripts_preinstall npm_config_prefix npm_lifecycle_script && . ~/.nvm/nvm.sh && nvm install $(cat .nvmrc) --reinstall-packages-from=current --skip-default-packages && nvm use; } || echo",
+    "postinstall": "pnpm ncu && pnpm audit",
+    "launch": "pnpm build && pnpm start",
+    "ncu": " npx npm-check-updates",
+    "start": "node dist/index.js",
+    "clean:package.json": "npx sort-package-json"
+  },
+  "dependencies": {
+    "@swc/core": "^1.3.71",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/morgan": "^1.9.4",
+    "@types/node": "^20.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "socket.io": "^4.7.1",
+    "socket.io-client": "^4.7.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vite-plugin-pwa": "^0.16.4"
+  }
+}
