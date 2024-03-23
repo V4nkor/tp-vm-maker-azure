@@ -1,24 +1,46 @@
 {
   "name": "tp-vm-maker-azure-front",
+  "version": "1.0.0",
+  "author": "Mathieu Morgat <morgatmathieu@gmail.com>",
+  "description": "Frontend for the Azure VM Maker school project",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "vite --host",
+    "build": "vite build --base=./ && cp .env ./dist && cp .env.serve ./dist && rm -R ../host/front/dist && cp -R ./dist ../host/front/ ",
+    "build:serve": "vite build --mode serve --base=./ && cp .env ./dist && cp .env.serve ./dist && rm -R ../host/front/dist && cp -R ./dist ../host/front/",
+    "preview": "vite preview",
+    "serve": "serve -s dist",
+    "clean:package.json": "npx sort-package-json"
   },
   "dependencies": {
-    "axios": "^1.6.7",
     "pinia": "^2.1.7",
-    "sass": "^1.71.1",
+    "sass": "^1.72.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-prettier": "^5.0.0",
+    "stylelint-scss": "^6.2.1",
     "typescript": "^5.4.2",
-    "vue": "^3.4.19",
-    "vue-router": "^4.3.0"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.11.0",
+    "@types/ws": "^8.5.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/tsconfig": "^0.5.1",
-    "vite": "^5.1.4"
+    "dotenv": "^16.4.5",
+    "jsdom": "^23.2.0",
+    "serve": "^14.2.1",
+    "vite": "^5.2.2"
   }
 }

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
     import vmButton from '../components/atoms/vm-Button.vue';
-    import { onMounted, ref } from 'vue';
+    import { onMounted } from 'vue';
     import { useRouter } from 'vue-router';
     import { useLoginStore } from '../stores';
     import vmImage from '../components/atoms/vm-Image.vue';
@@ -16,7 +16,7 @@
 <template>
     <div class="home-container">
         <h1 class="welcome-title">Welcome to VM Maker</h1>
-        <vmImage src="/src/assets/logo.svg" alt="Vm-Maker Logo" :width="200" :height="200"></vmImage>
+        <vmImage src="logo.svg" alt="Vm-Maker Logo" :width="200" :height="200"></vmImage>
         <p>VM Maker is a tool to create virtual machines using the azure cloud SDK</p>
         <div v-if="!loginStore.loggedIn" class="welcome-description">
             <p>Please Login to use this web-app :</p>

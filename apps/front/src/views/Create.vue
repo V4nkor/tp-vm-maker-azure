@@ -1,11 +1,13 @@
 <script lang="ts" setup>
 import { ref, withDefaults, defineProps, onMounted } from 'vue'
-import { vmType } from '../utils/ifaces/vmTypes.enum'
+//import { vmType } from '../utils/ifaces/vmTypes.enum'
 import vmImage from '../components/atoms/vm-Image.vue'
 import vmButton from '../components/atoms/vm-Button.vue'
 import { useRouter } from 'vue-router'
 import { useLoginStore } from '../stores'
 import { VmModels } from '../utils/ifaces/virtualMachine'
+
+//import backend from '../axios/back.axios'
 
 const router = useRouter();
 const loginStore = useLoginStore();
@@ -29,26 +31,33 @@ onMounted(() => {
     console.log(routeIdParam);
 
     // Find the VM type and set the values accordingly by searching in the VmModels array
-    for (let i = 0; i < VmModels.length; i++) {
-        if (VmModels[i].type === routeIdParam) {
-            typeTitle.value = VmModels[i].type.charAt(0).toUpperCase() + VmModels[i].type.slice(1);
-            typeImg.value = '/src/assets/vms/' + VmModels[i].type +  '.png';
-            typeVersion.value = VmModels[i].version;
-            typeSize.value = VmModels[i].size;
-            typeRam.value = VmModels[i].ram;
-            vmToCreateId.value = VmModels[i].type;
+    for (const element of VmModels) {
+        if (element.type === routeIdParam) {
+            typeTitle.value = element.type.charAt(0).toUpperCase() + element.type.slice(1);
+            typeImg.value = element.type +  '.png';
+            typeVersion.value = element.version;
+            typeSize.value = element.size;
+            typeRam.value = element.ram;
+            vmToCreateId.value = element.type;
             isValid.value = true;
             break;
         }
     }
-
-    
 })
 
 function handleCreateVm(id: string) {
     console.log('creating vm with id : ' + id);
-    // call to the backend using axios to create the VM
 
+
+    // call to the backend using axios to create the VM ! THIS WAS SCRAPPED
+    /* backend.post('/createvm', {
+        vmType: id,
+        userId: loginStore.user.id
+    }).then((res: any) => {
+        console.log(res);
+    }).catch((err: any) => {
+        console.log(err);
+    }); */
 
     // Show the user the ssh credentials
 
@@ -59,7 +68,10 @@ function handleCreateVm(id: string) {
 
 <template>
     <div class="create-container">
-        <div v-if="isValid" class="create-modal">
+        <div v-if="isCreating">
+
+        </div>
+        <div v-else-if="isValid" class="create-modal">
             <vmImage :src="typeImg" :alt="typeTitle+ ' Virtual Machine Logo'" :width="100" :height="100"></vmImage>
             <p>{{ typeTitle }} Virtual Machine :</p>
             <ul>

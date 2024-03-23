@@ -1,16 +1,29 @@
 {
   "name": "tp-vm-maker-azure",
   "version": "1.0.0",
-  "description": "",
+  "author": "Mathieu Morgat <morgatmathieu@gmail.com>",
+  "description": "Azure VM Maker school project repository",
+  "private": true,
   "type": "module",
+  "files": [
+    "dist/",
+    "src"
+  ],
   "scripts": {
     "test": "echo \"Info: no test specified\"",
-    "serve": "pnpm --parallel dev",
+    "dev": "pnpm --parallel dev",
+    "build": "pnpm --parallel build",
+    "build:serve": "pnpm --parallel build:serve",
+    "start": "pnpm --parallel start",
+    "serve": "pnpm --parallel serve",
+    "pm2": "pnpm --parallel pm2",
+    "start:pm2": "pm2 start ecosystem.config.cjs",
     "env": "node setup-env.cjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "update": "pnpm update --recursive",
+    "install:r": "pnpm install --recursive"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "engines": {
     "node": ">=20.10.0 <21.0",
@@ -22,24 +35,17 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "typescript": "^5.4.2",
-    "vue": "^3.4.19"
-  },
   "commitlint": {
-    "extends": [ "@commitlint/config-conventional" ]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "devDependencies": {
-    "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.11.0",
-    "@tsconfig/node18": "^18.2.2",
-    "@commitlint/cli": "^19.0.3",
-    "@commitlint/config-conventional": "^19.0.3",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "jsdom": "^23.2.0",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.0.11",
-    "vite": "^5.1.4"
+    "pm2": "^5.3.1"
   }
 }

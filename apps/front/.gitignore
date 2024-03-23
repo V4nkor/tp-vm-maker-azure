@@ -244,8 +244,6 @@ $RECYCLE.BIN/
 
 storybook-static/
 
-
-
 dist-ssr
 coverage
 *.local
@@ -274,3 +272,6 @@ TODO.md
 .eslintcache
 certs/*
 vite.config.ts.*
+
+# Self added rules (necessary for the project to work properly on github) :
+!.env
