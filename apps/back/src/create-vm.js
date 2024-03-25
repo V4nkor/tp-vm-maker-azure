@@ -85,18 +85,18 @@ async function createResources() {
     const vmPublicIp = await getPublicIP(vmInfo);
 
     console.log(
-        "Your ", offer ,"VM has been created. You can connect to it using the following information:"
+      "Your ", offer ,"VM has been created. You can connect to it using the following information:"
     );
 
     console.log(
       "Public IP Address: " + vmPublicIp.ipAddress
     );
     console.log(
-        "Authentification: " + adminUsername + " / " + adminPassword
+      "Authentification: " + adminUsername + " / " + adminPassword
     );
 
     console.log(
-        "It will be automatically turned off in 3 minutes."
+      "It will be automatically turned off in 3 minutes."
     );
 
     // Turn off resources after 3 minutes

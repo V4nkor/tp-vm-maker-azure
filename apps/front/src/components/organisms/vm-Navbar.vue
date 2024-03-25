@@ -13,7 +13,7 @@ const loginStore = useLoginStore();
       <vmImage
         :class="{ active: $route.name === 'Home' }"
         class="navbar-logo"
-        src="logo.svg"
+        src="/logo.svg"
         :alt="'logo'"
         :width="30"
         :height="30"
@@ -47,7 +47,7 @@ const loginStore = useLoginStore();
           <router-link class="navbar-link" :to="'/login'">
             <vmImage
               :class="{ 'router-link-active': $route.name === 'Login' }"
-              src="login.svg"
+              src="/login.svg"
               :width="30"
               :height="30"
             />
@@ -58,7 +58,7 @@ const loginStore = useLoginStore();
         </li>
         <li class="navbar-element" v-if="loginStore.loggedIn">
           <router-link class="navbar-link navbar-logout" :to="'/logout'">
-            <vmImage src="logout.svg" :width="30" :height="30" />
+            <vmImage src="/logout.svg" :width="30" :height="30" />
           </router-link>
         </li>
       </ul>

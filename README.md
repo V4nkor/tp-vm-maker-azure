@@ -151,7 +151,8 @@ pnpm run dev
 
 This will launch the frontend on `http://localhost:8082/front/`
 
-
+**It is the best way to run to ensure that the frontend and the backend are working correctly**
+**But it is the worst way to run the project in production**
 
 ### 5) Build all apps and serve them
 

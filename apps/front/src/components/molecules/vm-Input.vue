@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, withDefaults, defineProps } from "vue";
+import { ref, withDefaults } from "vue";
 
 export interface Props {
   label?: string;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, withDefaults, defineProps, onMounted } from "vue";
+import { ref, withDefaults, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { vmType } from "../../utils/ifaces/vmTypes.enum";
 import vmImage from "../atoms/vm-Image.vue";

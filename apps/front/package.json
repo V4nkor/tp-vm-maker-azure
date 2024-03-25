@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --mode serve --host",
     "build": "vite build --base=./ && cp .env ./dist && cp .env.serve ./dist && rm -R ../host/front/dist && cp -R ./dist ../host/front/ ",
     "build:serve": "vite build --mode serve --base=./ && cp .env ./dist && cp .env.serve ./dist && rm -R ../host/front/dist && cp -R ./dist ../host/front/",
     "preview": "vite preview",
@@ -16,6 +16,7 @@
   "dependencies": {
     "pinia": "^2.1.7",
     "sass": "^1.72.0",
+    "socket.io-client": "^4.7.5",
     "stylelint": "^16.2.1",
     "stylelint-config-recommended-scss": "^14.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
